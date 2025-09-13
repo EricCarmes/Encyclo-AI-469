@@ -1,0 +1,234 @@
+
+body {
+  background-color: #f9f9f9;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  margin: 20px;
+  text-align: center;
+}
+
+#playlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#playlist li {
+  margin: 10px 0;
+}
+
+#playlist a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, font-weight 0.3s;
+}
+
+#playlist a:hover {
+  background-color: #e0e0e0;
+}
+
+#currentTitle {
+  margin: 20px 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#audioContainer {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.separator {
+  border-top: 1px solid #aaa;
+  margin: 10px 0;
+}
+/* ============================== */
+/* ACCESSIBILITÉ LECTEUR PLYR 🎧 */
+/* ============================== */
+
+/* Agrandir le bouton lecture/pause */
+.plyr__controls button.plyr__control {
+  width: 60px !important;
+  height: 60px !important;
+  font-size: 24px !important;
+  border-radius: 8px !important;
+}
+
+/* Agrandir les icônes dans les boutons */
+.plyr__controls .plyr__control svg {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Épaissir la barre de progression */
+.plyr__progress input[type=range] {
+  height: 12px !important;
+}
+
+/* Agrandir la poignée du curseur */
+.plyr__progress input[type=range]::-webkit-slider-thumb {
+  width: 20px !important;
+  height: 20px !important;
+  background-color: #000 !important;
+}
+
+.plyr__progress input[type=range]::-moz-range-thumb {
+  width: 20px !important;
+  height: 20px !important;
+  background-color: #000 !important;
+}
+
+/* Augmenter les marges entre les contrôles */
+.plyr__controls {
+  gap: 20px !important;
+}
+
+/* Améliorer le contraste pour les boutons */
+.plyr__control {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Afficher un focus bien visible au clavier */
+.plyr__control:focus {
+  outline: 3px solid #FFD700 !important; /* Jaune or */
+  outline-offset: 2px;
+}
+/* ============================== */
+/* BARRE DE PROGRESSION : TAILLE RÉDUITE + PLUS HAUTE */
+/* ============================== */
+
+/* Réduire la largeur totale du bloc de contrôles */
+.plyr__controls {
+  max-width: 60%;        /* Tu peux changer à 500px ou 70% si besoin */
+  margin: 0 auto !important;
+  justify-content: center;
+  gap: 20px !important;
+}
+
+/* Rendre la barre plus épaisse */
+.plyr__progress input[type=range] {
+  height: 32px !important;       /* Hauteur augmentée */
+  border-radius: 8px;
+}
+
+/* Agrandir le curseur (le point) */
+.plyr__progress input[type=range]::-webkit-slider-thumb {
+  width: 22px !important;
+  height: 22px !important;
+  background-color: #000 !important;
+}
+
+.plyr__progress input[type=range]::-moz-range-thumb {
+  width: 22px !important;
+  height: 22px !important;
+  background-color: #000 !important;
+}
+
+
+/* ============================== */
+/* STYLE DU MENU "SPEED" DU PLAYER */
+/* ============================== */
+
+/* Conteneur du menu (vitesse, qualité, etc.) */
+.plyr__menu__container {
+  background-color: #ffffff !important;
+  border: 1px solid #ccc !important;
+  border-radius: 10px !important;
+  padding: 5px 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  width: auto !important;
+  min-width: 120px;
+  font-size: 16px !important;
+}
+
+/* Chaque option dans le menu */
+.plyr__menu__container .plyr__control {
+  background-color: transparent !important;
+  color: #333 !important;
+  padding: 10px 15px !important;
+  font-size: 16px !important;
+  border-radius: 0 !important;
+  text-align: left !important;
+  width: 100%;
+}
+
+/* Option active (ex. vitesse actuelle sélectionnée) */
+.plyr__menu__container .plyr__control[aria-checked="true"] {
+  background-color: #f0f0f0 !important;
+  color: #000 !important;
+  font-weight: bold !important;
+}
+
+/* Hover effect */
+.plyr__menu__container .plyr__control:hover {
+  background-color: #e8e8e8 !important;
+}
+
+/* ============================== */
+/* AFFICHER LE MENU SPEED À DROITE DU BOUTON CONFIGURATION */
+/* ============================== */
+
+.plyr__menu__container {
+  position: absolute !important;
+  top: 0 !important;
+  left: 100% !important;          /* aligne le menu à droite du bouton */
+  bottom: auto !important;
+  right: auto !important;
+
+  margin-left: 10px !important;   /* petit espace entre bouton et menu */
+  z-index: 9999 !important;
+
+  background-color: #ffffff !important;
+  border: 1px solid #ccc !important;
+  border-radius: 10px !important;
+  padding: 5px 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  min-width: 180px !important;
+  white-space: nowrap !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+}
+
+/* Style des boutons dans le menu */
+.plyr__menu__container .plyr__control {
+  background-color: transparent !important;
+  color: #333 !important;
+  padding: 12px 16px !important;
+  font-size: 16px !important;
+  text-align: left !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Option sélectionnée */
+.plyr__menu__container .plyr__control[aria-checked="true"] {
+  background-color: #f0f0f0 !important;
+  color: #000 !important;
+  font-weight: bold !important;
+}
+
+/* Hover */
+.plyr__menu__container .plyr__control:hover {
+  background-color: #e8e8e8 !important;
+}
+
+/* ============================== */
+/* CENTRAGE DES ICÔNES DANS LES BOUTONS PLYR */
+/* ============================== */
+
+.plyr__control {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');

@@ -1,4 +1,3 @@
-
 body {
   background-color: #f9f9f9;
   font-family: 'Open Sans', sans-serif;
@@ -29,6 +28,12 @@ body {
   background-color: #e0e0e0;
 }
 
+/* Piste active */
+#playlist a.active {
+  font-weight: bold;
+  color: red;
+}
+
 #currentTitle {
   margin: 20px 0;
   font-size: 1.2em;
@@ -48,11 +53,11 @@ body {
   border-top: 1px solid #aaa;
   margin: 10px 0;
 }
+
 /* ============================== */
 /* ACCESSIBILITÉ LECTEUR PLYR 🎧 */
 /* ============================== */
 
-/* Agrandir le bouton lecture/pause */
 .plyr__controls button.plyr__control {
   width: 60px !important;
   height: 60px !important;
@@ -60,18 +65,15 @@ body {
   border-radius: 8px !important;
 }
 
-/* Agrandir les icônes dans les boutons */
 .plyr__controls .plyr__control svg {
   width: 32px !important;
   height: 32px !important;
 }
 
-/* Épaissir la barre de progression */
 .plyr__progress input[type=range] {
   height: 12px !important;
 }
 
-/* Agrandir la poignée du curseur */
 .plyr__progress input[type=range]::-webkit-slider-thumb {
   width: 20px !important;
   height: 20px !important;
@@ -84,41 +86,32 @@ body {
   background-color: #000 !important;
 }
 
-/* Augmenter les marges entre les contrôles */
 .plyr__controls {
   gap: 20px !important;
 }
 
-/* Améliorer le contraste pour les boutons */
 .plyr__control {
   background-color: #000 !important;
   color: #fff !important;
 }
 
-/* Afficher un focus bien visible au clavier */
 .plyr__control:focus {
-  outline: 3px solid #FFD700 !important; /* Jaune or */
+  outline: 3px solid #FFD700 !important;
   outline-offset: 2px;
 }
-/* ============================== */
-/* BARRE DE PROGRESSION : TAILLE RÉDUITE + PLUS HAUTE */
-/* ============================== */
 
-/* Réduire la largeur totale du bloc de contrôles */
 .plyr__controls {
-  max-width: 60%;        /* Tu peux changer à 500px ou 70% si besoin */
+  max-width: 60%;
   margin: 0 auto !important;
   justify-content: center;
   gap: 20px !important;
 }
 
-/* Rendre la barre plus épaisse */
 .plyr__progress input[type=range] {
-  height: 32px !important;       /* Hauteur augmentée */
+  height: 32px !important;
   border-radius: 8px;
 }
 
-/* Agrandir le curseur (le point) */
 .plyr__progress input[type=range]::-webkit-slider-thumb {
   width: 22px !important;
   height: 22px !important;
@@ -131,24 +124,16 @@ body {
   background-color: #000 !important;
 }
 
-
-/* ============================== */
-/* STYLE DU MENU "SPEED" DU PLAYER */
-/* ============================== */
-
-/* Conteneur du menu (vitesse, qualité, etc.) */
 .plyr__menu__container {
   background-color: #ffffff !important;
   border: 1px solid #ccc !important;
   border-radius: 10px !important;
   padding: 5px 0 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-  width: auto !important;
   min-width: 120px;
   font-size: 16px !important;
 }
 
-/* Chaque option dans le menu */
 .plyr__menu__container .plyr__control {
   background-color: transparent !important;
   color: #333 !important;
@@ -159,69 +144,15 @@ body {
   width: 100%;
 }
 
-/* Option active (ex. vitesse actuelle sélectionnée) */
 .plyr__menu__container .plyr__control[aria-checked="true"] {
   background-color: #f0f0f0 !important;
   color: #000 !important;
   font-weight: bold !important;
 }
 
-/* Hover effect */
 .plyr__menu__container .plyr__control:hover {
   background-color: #e8e8e8 !important;
 }
-
-/* ============================== */
-/* AFFICHER LE MENU SPEED À DROITE DU BOUTON CONFIGURATION */
-/* ============================== */
-
-.plyr__menu__container {
-  position: absolute !important;
-  top: 0 !important;
-  left: 100% !important;          /* aligne le menu à droite du bouton */
-  bottom: auto !important;
-  right: auto !important;
-
-  margin-left: 10px !important;   /* petit espace entre bouton et menu */
-  z-index: 9999 !important;
-
-  background-color: #ffffff !important;
-  border: 1px solid #ccc !important;
-  border-radius: 10px !important;
-  padding: 5px 0 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-  min-width: 180px !important;
-  white-space: nowrap !important;
-  max-height: 90vh !important;
-  overflow-y: auto !important;
-}
-
-/* Style des boutons dans le menu */
-.plyr__menu__container .plyr__control {
-  background-color: transparent !important;
-  color: #333 !important;
-  padding: 12px 16px !important;
-  font-size: 16px !important;
-  text-align: left !important;
-  width: 100% !important;
-  box-sizing: border-box;
-}
-
-/* Option sélectionnée */
-.plyr__menu__container .plyr__control[aria-checked="true"] {
-  background-color: #f0f0f0 !important;
-  color: #000 !important;
-  font-weight: bold !important;
-}
-
-/* Hover */
-.plyr__menu__container .plyr__control:hover {
-  background-color: #e8e8e8 !important;
-}
-
-/* ============================== */
-/* CENTRAGE DES ICÔNES DANS LES BOUTONS PLYR */
-/* ============================== */
 
 .plyr__control {
   display: flex !important;
@@ -230,5 +161,97 @@ body {
   padding: 0 !important;
 }
 
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.player-controls {
+  display: flex;
+  justify-content: center;     /* centre horizontalement */
+  align-items: center;         /* aligne les éléments verticalement au centre */
+  gap: 120px;                  /* espace entre Play et bloc vitesse */
+  margin: 40px 0;
+}
+
+
+/* Bouton Play */
+#bigPlayBtn {
+  width: 300px;
+  height: 180px;
+  border-radius: 50%;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 72px;
+  cursor: pointer;
+}
+
+/* Bloc vitesse */
+#speedControl {
+  display: flex;
+  flex-direction: column;     /* label au-dessus */
+  align-items: center;
+  gap: 20px;
+}
+
+.speed-label {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Curseur + labels côte à côte */
+.speed-knob-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Slider vertical */
+#speedKnob {
+  -webkit-appearance: slider-vertical;
+  writing-mode: bt-lr;
+  width: 120px;
+  height: 300px;
+  cursor: pointer;
+}
+
+/* Thumb rectangulaire plus large que le rail */
+#speedKnob::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 140px;
+  height: 40px;
+  background: #000;
+  border-radius: 8px;
+  border: 3px solid #FFD700;
+}
+#speedKnob::-moz-range-thumb {
+  width: 140px;
+  height: 40px;
+  background: #000;
+  border-radius: 8px;
+  border: 3px solid #FFD700;
+}
+
+/* Rail du slider */
+#speedKnob::-webkit-slider-runnable-track,
+#speedKnob::-moz-range-track {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* Repères alignés verticalement */
+#speedLabels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;     /* même hauteur que le slider */
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+}
+
+
+#speedValue {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 15px;
+}

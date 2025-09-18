@@ -2,86 +2,30 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smartbook - AudioBook</title>
-
+  <title>Smartbook – Redirection…</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" href="Couverture_resized.png" />
-
-  <meta name="theme-color" content="#003366" />
-
+  <link rel="icon" type="image/png" href="logo-icon-192.png" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Redirection immédiate vers ta page d’accueil réelle -->
+  <meta http-equiv="refresh" content="0; url=Smartbook.html" />
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 2em;
-      background: #f4f4f4;
-    }
-
-    .cover {
-      background: white;
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 1em;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-
-    #installBtn {
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #0056b3;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
+    body {font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; display:grid; place-items:center; min-height:100vh; color:#333;}
+    a {color:#004080;}
   </style>
 </head>
 <body>
-
-  <div class="cover">
-    <img src="Couverture_resized.jpg" alt="Couverture" style="max-width: 100%; height: auto;" />
-  </div>
-
-  <button id="installBtn">📲 Installer cette application</button>
+  <p>Redirection vers <strong>Smartbook.html</strong>…<br>
+  Si rien ne se passe, <a href="Smartbook.html">cliquez ici</a>.</p>
 
   <script>
-    let deferredPrompt = null;
-    const installBtn = document.getElementById("installBtn");
-
-    // Afficher le bouton par défaut
-    installBtn.style.display = "inline-block";
-
-    // Enregistrer le service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(reg => console.log("✅ Service Worker enregistré :", reg.scope))
-        .catch(err => console.error("❌ Erreur Service Worker :", err));
+    // Fallback JS si la meta-refresh est bloquée
+    if (!/Smartbook\.html$/i.test(location.href)) {
+      setTimeout(() => location.replace('Smartbook.html'), 50);
     }
-
-    // Intercepter le beforeinstallprompt
-    window.addEventListener("beforeinstallprompt", (e) => {
-      console.log("🧩 Événement beforeinstallprompt capturé");
-      e.preventDefault();
-      deferredPrompt = e;
-    });
-
-    // Bouton d'installation
-    installBtn.addEventListener("click", async () => {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        console.log(`👉 Résultat de l'installation : ${outcome}`);
-        deferredPrompt = null;
-      } else {
-        alert("L'installation automatique n'est pas disponible.\nAjoutez cette application à l'écran d'accueil depuis le menu du navigateur.");
-      }
-    });
+    // Enregistre le SW même si l’utilisateur atterrit d’abord ici
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').catch(console.error);
+    }
   </script>
-
 </body>
 </html>

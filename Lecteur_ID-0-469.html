@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Smartbook - AudioBook</title>
+  <link rel="stylesheet" href="plyr.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="ID-0-469-Couverture.jpg" alt="Couverture" style="width: 20%; height: auto; margin-bottom: 20px;">
+
+  <div class="logos">
+    <img src="PLANCHE-1a.jpg" alt="Logo AudioBook" style="width: 5%; height: auto; margin-bottom: 20px;">
+    <img src="Logo_resized.jpg" alt="Logo Encyclo-AI" style="width: 10%; height: auto; margin-bottom: 20px;">
+  </div>
+
+<!-- Bloc bouton Play + potentiomètre vitesse -->
+<div class="player-controls">
+  <!-- Gros bouton Play -->
+  <button id="bigPlayBtn" aria-label="Lire ou mettre en pause le livre audio">▶</button>
+
+  <!-- Bloc vitesse -->
+  <div id="speedControl">
+    <div class="speed-label">Vitesse</div>
+    <div class="speed-knob-wrapper">
+      <input type="range" id="speedKnob" min="0.9" max="1.1" step="0.05" value="1" orient="vertical">
+
+      <!-- Colonne repères alignés -->
+      <div id="speedLabels">
+        <span>++</span>
+        <span>+</span>
+        <span>=</span>
+        <span>-</span>
+        <span>--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Lecteur audio -->
+  <audio id="audioPlayer" controls></audio>
+
+  <!-- Playlist -->
+  <ul id="playlist">
+    <li><a href="Introduction.mp3" style="font-weight: bold;">INTRODUCTION - UN VOYAGE À TRAVERS L'HISTOIRE ET L'ARCHITECTURE DU MÉTRO PARISIEN</a></li>
+
+    <li style="font-weight: bold;">Chapitre 1 - LES ORIGINES DU MÉTRO PARISIEN : CONCEPTION ET INAUGURATION</li>
+    <ul>
+      <li><a href="Chapitre1-1.mp3">1.1 - Le contexte historique et les besoins de transport</a></li>
+      <li><a href="Chapitre1-2.mp3">1.2 - Fulgence Bienvenüe et les premiers plans</a></li>
+      <li><a href="Chapitre1-3.mp3">1.3 - L'inauguration de 1900 et l'Exposition universelle</a></li>
+    </ul>
+
+    <li style="font-weight: bold;">Chapitre 2 - L'ÉVOLUTION DU RÉSEAU : EXTENSIONS ET MODERNISATIONS</li>
+    <ul>
+      <li><a href="Chapitre2-1.mp3">2.1 - Les premières extensions au début du XXe siècle</a></li>
+      <li><a href="Chapitre2-2.mp3">2.2 - Les modernisations des années 1960 et 1970</a></li>
+      <li><a href="Chapitre2-3.mp3">2.3 - L'extension vers les banlieues</a></li>
+    </ul>
+
+    <li style="font-weight: bold;">Chapitre 3 - LES DÉFIS TECHNIQUES DE LA CONSTRUCTION : INNOVATIONS ET SOLUTIONS</li>
+    <ul>
+      <li><a href="Chapitre3-1.mp3">3.1 - Les contraintes géologiques de Paris</a></li>
+      <li><a href="Chapitre3-2.mp3">3.2 - Les avancées technologiques dans la construction</a></li>
+      <li><a href="Chapitre3-3.mp3">3.3 - Les défis de la sécurité et de la maintenance</a></li>
+    </ul>
+
+    <li style="font-weight: bold;">Chapitre 4 - LE MÉTRO PENDANT LES CONFLITS : RÔLE HISTORIQUE ET SOCIÉTAL</li>
+    <ul>
+      <li><a href="Chapitre4-1.mp3">4.1 - Le métro pendant la Première Guerre mondiale</a></li>
+      <li><a href="Chapitre4-2.mp3">4.2 - L'utilisation du métro comme abri pendant la Seconde Guerre mondiale</a></li>
+      <li><a href="Chapitre4-3.mp3">4.3 - L'impact des conflits sur le réseau</a></li>
+    </ul>
+
+    <li style="font-weight: bold;">Chapitre 5 - L'IMPACT CULTUREL DU MÉTRO : ART, MUSIQUE ET IDENTITÉ URBAINE</li>
+    <ul>
+      <li><a href="Chapitre5-1.mp3">5.1 - Les installations artistiques dans les stations</a></li>
+      <li><a href="Chapitre5-2.mp3">5.2 - Les performances musicales dans le métro</a></li>
+      <li><a href="Chapitre5-3.mp3">5.3 - Le métro comme symbole de l'identité parisienne</a></li>
+    </ul>
+
+    <li style="font-weight: bold;">Chapitre 6 - ARCHITECTURE DES STATIONS : STYLES ET ÉVOLUTIONS ESTHÉTIQUES</li>
+    <ul>
+      <li><a href="Chapitre6-1.mp3">6.1 - Les styles architecturaux des premières stations</a></li>
+      <li><a href="Chapitre6-2.mp3">6.2 - Les évolutions esthétiques au fil des décennies</a></li>
+      <li><a href="Chapitre6-3.mp3">6.3 - Les stations emblématiques et leur impact visuel</a></li>
+    </ul>
+
+    <li style="font-weight: bold;">Chapitre 7 - ACCESSIBILITÉ ET MODERNISATION : VERS UN MÉTRO INCLUSIF</li>
+    <ul>
+      <li><a href="Chapitre7-1.mp3">7.1 - Les défis de l'accessibilité pour tous</a></li>
+      <li><a href="Chapitre7-2.mp3">7.2 - Les initiatives pour améliorer l'accessibilité</a></li>
+      <li><a href="Chapitre7-3.mp3">7.3 - L'impact de la modernisation sur l'expérience des passagers</a></li>
+    </ul>
+
+    <li style="font-weight: bold;">Chapitre 8 - PROJETS FUTURS : LE GRAND PARIS EXPRESS ET AU-DELÀ</li>
+    <ul>
+      <li><a href="Chapitre8-1.mp3">8.1 - Les objectifs du Grand Paris Express</a></li>
+      <li><a href="Chapitre8-2.mp3">8.2 - Les défis de la mise en œuvre</a></li>
+      <li><a href="Chapitre8-3.mp3">8.3 - L'impact attendu sur la région parisienne</a></li>
+    </ul>
+
+    <li><a href="Conclusion.mp3" style="font-weight: bold;">CONCLUSION - L'HÉRITAGE ET L'AVENIR DU MÉTRO PARISIEN</a></li>
+  </ul>
+
+  <p><a href="ID-0-469-Annexes.pdf" target="_blank">📄 Consulter les annexes du livre</a></p>
+  <p><a href="mentions_legales.pdf">Mentions légales</a></p>
+
+  <script src="plyr.polyfilled.js"></script>
+  <script src="lecteur.js"></script>
+</body>
+</html>
